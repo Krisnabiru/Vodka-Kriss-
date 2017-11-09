@@ -39,7 +39,7 @@ def sendMessage(to, text, contentMetadata={}, contentType=0):
 
 def NOTIFIED_ADD_CONTACT(op):
     try:
-        sendMessage(op.param1, client.getContact(op.param1).displayName + "Makasih ya udah di add, bott by : krisnabiru.")
+        sendMessage(op.param1, client.getContact(op.param1).displayName + "Makasih ya udah di add, my owner id : iamfake")
     except Exception as e:
         print e
         print ("\n\nNOTIFIED_ADD_CONTACT\n\n")
@@ -60,7 +60,7 @@ tracer.addOpInterrupt(17,NOTIFIED_ACCEPT_GROUP_INVITATION)
 
 def NOTIFIED_KICKOUT_FROM_GROUP(op):
     try:
-        sendMessage(op.param1, client.getContact(op.param3).displayName + " Good bye\nBott by : krisnabiru.")
+        sendMessage(op.param1, client.getContact(op.param3).displayName + " Good bye\nOwner id : iamfake")
     except Exception as e:
         print e
         print ("\n\nNOTIFIED_KICKOUT_FROM_GROUP\n\n")
@@ -70,7 +70,7 @@ tracer.addOpInterrupt(19,NOTIFIED_KICKOUT_FROM_GROUP)
 
 def NOTIFIED_LEAVE_GROUP(op):
     try:
-        sendMessage(op.param1, client.getContact(op.param2).displayName + " Good bye\nBott by : krisnabiru.")
+        sendMessage(op.param1, client.getContact(op.param2).displayName + " Good bye\nOwner id : iamfake")
     except Exception as e:
         print e
         print ("\n\nNOTIFIED_LEAVE_GROUP\n\n")
@@ -188,7 +188,7 @@ def SEND_MESSAGE(op):
                         contact = client.getContact(Mids[kazu])
                         sendMessage(msg.to, ""+contact.displayName+" Sorry")
                     else:
-                        sendMessage(msg.to, "Bott by : krisnabiru.")
+                        sendMessage(msg.to, "My owner id : iamfake")
                 if msg.text == "cancel":
                     group = client.getGroup(msg.to)
                     if group.invitee is None:
@@ -219,7 +219,7 @@ def SEND_MESSAGE(op):
                 if msg.text == "gift":
                     sendMessage(msg.to, text="gift sent", contentMetadata=None, contentType=9)
                 if msg.text == "set":
-                    sendMessage(msg.to, "Read point telah di set\nKetik [tes] tanpa tanda kurung maka muncul si sider :p")
+                    sendMessage(msg.to, "Read point telah di set\nKetik [tes] tanpa tanda kurung maka muncul display name si sider :p")
                     try:
                         del wait['readPoint'][msg.to]
                         del wait['readMember'][msg.to]
